@@ -59,9 +59,9 @@ const Success = ({ products }: Props) => {
           <div className="relative ml-4 h-16 w-8 cursor-pointer transition lg:hidden">
             <Image 
                         src = "https://banner2.cleanpng.com/20180204/gbw/kisspng-macintosh-mac-os-x-lion-macos-macbook-operating-sy-apple-logo-5a77a762126b40.8775341115177910740755.jpg" 
-                        layout = "fill"
-                        objectFit = "contain"
-                        alt = "logo"
+                        fill
+              alt="logo"
+              className='object-contain'
                     />
           </div>
         </Link>

@@ -21,7 +21,11 @@ const Landing = () => {
           </div>
 
           <div className="relative hidden h-[450px] w-[450px] transition-all duration-500 md:inline lg:h-[650px] lg:w-[600px]">
-            <Image src="/iphone.png" layout="fill" alt = "iphone" objectFit="contain" />
+          <Image src="/iphone.png" fill alt="iphone" priority
+            sizes="(max-width: 768px) 450px,
+              (max-width: 1200px) 600px,
+              "
+            className='object-contain' />
           </div>
         
 

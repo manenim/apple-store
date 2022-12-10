@@ -19,7 +19,6 @@ interface Props {
 
 }
 
-
 export default function Home({ categories, products }: Props) {
   console.log(categories, products)
   

@@ -30,7 +30,9 @@ function Product({ product }: Props) {
           src={urlFor(product.image[0]).url()}
           fill
           className="object-contain"
-          alt = "product image"
+          alt="product image"
+          sizes="(max-width: 768px) 10vw,
+              (max-width: 1200px) 10vw,"
         />
       </div>
 

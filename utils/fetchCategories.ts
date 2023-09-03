@@ -1,10 +1,15 @@
 export const fetchCategories = async () => {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/getCategories`);
+    try {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/getCategories`);
 
-    const data = await res.json();
+        const data = await res.json();
 
-    const categories: Category[] = data.categories
+        const categories: Category[] = data.categories
    
 
-    return categories
+        return categories
+    } catch (error) {
+        throw new Error("there was a error" + error)
+    }
+    
 }

@@ -1,5 +1,6 @@
 export const fetchLineItems = async (sessionId: string) => {
-  const res = await fetch(
+  try {
+    const res = await fetch(
     `${process.env.NEXT_PUBLIC_BASE_URL}/api/getSession?session_id=${sessionId}`
   );
 
@@ -9,4 +10,8 @@ export const fetchLineItems = async (sessionId: string) => {
   const products = data.session.data;
 
   return products;
+  } catch (error) {
+    throw new Error("there was a error" + error)
+  }
+  
 };

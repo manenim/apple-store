@@ -3,13 +3,15 @@ import Image from 'next/image'
 import Header from '../components/Header'
 import Landing from '../components/Landing'
 import { Tab } from "@headlessui/react";
-import { GetServerSideProps } from 'next';
+import { GetServerSideProps, GetStaticProps, GetStaticPropsResult } from 'next';
 import { fetchCategories } from '../utils/fetchCategories';
 import { fetchProducts } from '../utils/fetchProducts';
 import Product from '../components/Product';
 import Basket from '../components/Basket';
 import { getSession } from "next-auth/react";
 import type { Session } from "next-auth";
+import { InferGetStaticPropsType } from 'next'
+
 
 
 interface Props {
@@ -77,6 +79,7 @@ export default function Home({ categories, products }: Props) {
     </div>
   )
 }
+
 
 export const getServerSideProps: GetServerSideProps<Props> = async (context) => {
 

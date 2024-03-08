@@ -16,7 +16,7 @@ import { signIn, signOut, useSession } from "next-auth/react";
 
 
 const Header = () => {
-    const { data: session } = useSession();
+    const session  = null
     const items = useSelector(selectBasketItems);
   return (
     <header className='sticky top-0 z-30 flex w-full items-center justify-between bg-[#e7ecee] p-4'>
@@ -51,22 +51,9 @@ const Header = () => {
                       
                   </div>
               </Link>
-              {session ? (
-                  <Image
-            src={
-              session.user?.image ||
-              "https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mp&f=y"
-            }
-            alt=""
-            className="cursor-pointer rounded-full"
-            width={34}
-            height={34}
-            onClick={() => signOut()}
-          />
-                  
-            ) : (
-                  <PersonOutlineOutlinedIcon className = "headerIcon" onClick={() => signIn()} />
-            )}
+             
+                  <PersonOutlineOutlinedIcon className = "headerIcon" />
+            
 
         </div>
     </header>

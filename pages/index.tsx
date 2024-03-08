@@ -49,7 +49,7 @@ export default function Home({ categories, products }: Props) {
             New Promos
           </h1>
 
-          {/* <Tab.Group>
+          <Tab.Group>
             <Tab.List className="flex justify-center">
               {categories.map((category) => (
                 <Tab
@@ -73,7 +73,7 @@ export default function Home({ categories, products }: Props) {
               <Tab.Panel className="tabPanel">{showProducts(2)}</Tab.Panel>
               <Tab.Panel className="tabPanel">{showProducts(3)}</Tab.Panel>
             </Tab.Panels> 
-          </Tab.Group> */}
+          </Tab.Group>
         </div>
       </section>
     </div>

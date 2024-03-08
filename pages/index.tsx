@@ -97,7 +97,7 @@ export default function Home({ categories, products }: Props) {
 // }
 
 
-export async function getStaticProps<Props>({ preview = false }) {
+export async function getStaticProps({ preview = false }) {
   const categories = await fetchCategories()
   const products = await fetchProducts()
   return {

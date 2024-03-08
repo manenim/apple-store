@@ -1,13 +1,9 @@
+import { Search } from '@mui/icons-material'
+import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined'
+import ShoppingBagOutlinedIcon from '@mui/icons-material/ShoppingBagOutlined'
+import { Badge } from '@mui/material'
 import Image from 'next/image'
 import Link from 'next/link'
-import React from 'react'
-import {IoIosSearch} from 'react-icons/io'
-import {HiOutlineShoppingBag} from 'react-icons/hi'
-import {AiOutlineUser} from 'react-icons/ai'
-import { Search } from '@mui/icons-material'
-import { Badge } from '@mui/material'
-import ShoppingBagOutlinedIcon from '@mui/icons-material/ShoppingBagOutlined';
-import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined';
 import { useSelector } from 'react-redux'
 import { selectBasketItems } from '../redux/basketSlice'
 import { signIn, signOut, useSession } from "next-auth/react";
@@ -16,7 +12,7 @@ import { signIn, signOut, useSession } from "next-auth/react";
 
 
 const Header = () => {
-    const session  = null
+    // const { data: session } = useSession();
     const items = useSelector(selectBasketItems);
   return (
     <header className='sticky top-0 z-30 flex w-full items-center justify-between bg-[#e7ecee] p-4'>
@@ -51,10 +47,24 @@ const Header = () => {
                       
                   </div>
               </Link>
-             
-                  <PersonOutlineOutlinedIcon className = "headerIcon" />
-            
+              {/* {session=null ? (
+                  <Image
+            src={
+              session.user?.image ||
+              "https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mp&f=y"
+            }
+            alt=""
+            className="cursor-pointer rounded-full"
+            width={34}
+            height={34}
+            onClick={() => signOut()}
+          />
+                  
+            ) : (
+                  <PersonOutlineOutlinedIcon className = "headerIcon" onClick={() => signIn()} />
+                )} */}
 
+                <PersonOutlineOutlinedIcon className = "headerIcon" onClick={() => signIn()} />
         </div>
     </header>
   )

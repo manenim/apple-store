@@ -17,7 +17,7 @@ import { InferGetStaticPropsType } from 'next'
 interface Props {
   categories: Category[];
   products: Product[];
-  session: Session | null;
+  // session: Session | null;
 
 }
 
@@ -39,7 +39,7 @@ export default function Home({ categories, products }: Props) {
       </Head>
 
       <Header />
-      <Basket />
+      {/* <Basket /> */}
       <main className='relative h-[200vh] bg-[#E7ECEE]'>
         <Landing />
       </main>
@@ -49,7 +49,7 @@ export default function Home({ categories, products }: Props) {
             New Promos
           </h1>
 
-          <Tab.Group>
+          {/* <Tab.Group>
             <Tab.List className="flex justify-center">
               {categories.map((category) => (
                 <Tab
@@ -73,7 +73,7 @@ export default function Home({ categories, products }: Props) {
               <Tab.Panel className="tabPanel">{showProducts(2)}</Tab.Panel>
               <Tab.Panel className="tabPanel">{showProducts(3)}</Tab.Panel>
             </Tab.Panels> 
-          </Tab.Group>
+          </Tab.Group> */}
         </div>
       </section>
     </div>
@@ -85,13 +85,13 @@ export const getServerSideProps: GetServerSideProps<Props> = async (context) => 
 
   const categories = await fetchCategories()
   const products = await fetchProducts()
-    const session = await getSession(context);
+    // const session = await getSession(context);
 
   return {
     props: {
       categories,
       products,
-      session
+      // session
     }
   }
 }

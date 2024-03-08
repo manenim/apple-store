@@ -5,10 +5,11 @@ export const fetchCategories = async () => {
         const data = await res.json();
 
         const categories: Category[] = data.categories
-   
+        console.log(categories)
 
         return categories
     } catch (error) {
+        console.log(error)
         throw new Error("there was a error" + error)
     }
     

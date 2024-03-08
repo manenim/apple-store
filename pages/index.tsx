@@ -81,17 +81,28 @@ export default function Home({ categories, products }: Props) {
 }
 
 
-export const getServerSideProps: GetServerSideProps<Props> = async (context) => {
+// export const getServerSideProps: GetServerSideProps<Props> = async (context) => {
 
+//   const categories = await fetchCategories()
+//   const products = await fetchProducts()
+//     // const session = await getSession(context);
+
+//   return {
+//     props: {
+//       categories,
+//       products,
+//       // session
+//     }
+//   }
+// }
+
+
+export async function getStaticProps<Props>({ preview = false }) {
   const categories = await fetchCategories()
   const products = await fetchProducts()
-    // const session = await getSession(context);
-
   return {
-    props: {
-      categories,
-      products,
-      // session
-    }
-  }
+    props: { categories, products },
+    // If webhooks isn't setup then attempt to re-generate in 1 minute intervals
+    revalidate: process.env.SANITY_REVALIDATE_SECRET ? undefined : 40,
+  };
 }

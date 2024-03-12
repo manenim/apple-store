@@ -9,8 +9,7 @@ export const fetchCategories = async () => {
 
         return categories
     } catch (error) {
-        console.log(error)
-        throw new Error("there was a error" + error)
+        throw new Error("there was a error:" + " "+ error)
     }
     
 }

@@ -7,8 +7,8 @@ import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import Stripe from "stripe";
 import Button from "../components/Button";
-import { selectBasketItems, selectBasketTotal } from "../redux/basketSlice";
 import CheckoutProduct from "../components/CheckoutProduct";
+import { selectBasketItems, selectBasketTotal } from "../redux/basketSlice";
 import { fetchPostJSON } from "../utils/api-helpers";
 import getStripe from "../utils/get-stripejs";
 

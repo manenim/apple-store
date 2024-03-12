@@ -3,11 +3,16 @@
 @tailwind components;
 @tailwind utilities;
 
+/* global styles */
 
 @layer base {
   body {
     @apply font-body text-[#232428];
   }
+}
+
+a[href^="#"] {
+  scroll-behavior: smooth;
 }
 
 

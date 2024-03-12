@@ -3,7 +3,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* global styles */
+/* global styles css */
 
 @layer base {
   body {

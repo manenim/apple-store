@@ -39,7 +39,7 @@ export default function Home({ categories, products }: Props) {
       </Head>
 
       <Header />
-      {/* <Basket /> */}
+      <Basket />
       <main className='relative h-[200vh] bg-[#E7ECEE]'>
         <Landing />
       </main>
